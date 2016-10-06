@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Catalog</string>
+    <string name="product_catalog">Product catalog</string>
+    <string name="loading">Cargando...</string>
+    <string name="title">titulo...</string>
+
+    <!-- Menu -->
+    <string name="search">buscar...</string>
+    <string name="order_desc">Ordenar Descendente</string>
+    <string name="order_asc">Ordenar Ascendete</string>
+
+    <!-- Catalog detail -->
+    <string name="price_detail">5000</string>
+    <string name="title_detail">Samsung Galaxy S7</string>
+    <string name="product_description">Características:</string>
+    <string name="product_condition">Condición del producto:</string>
+    <string name="product_quantity">Cantidad Disponible:</string>
+    <string name="product_image">imagen del producto</string>
+    <string name="product_detail">Detalle de producto</string>
+</resources>

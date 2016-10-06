@@ -16,5 +16,5 @@
     <string name="product_condition">Condición del producto:</string>
     <string name="product_quantity">Cantidad Disponible:</string>
     <string name="product_image">imagen del producto</string>
-    <string name="product_detail">Detalle de producto</string>
+    <string name="product_detail">Detalle del producto</string>
 </resources>

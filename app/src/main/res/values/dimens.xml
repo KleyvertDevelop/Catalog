@@ -4,6 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="item_height">300dp</dimen>
     <dimen name="tittle_label_text">17sp</dimen>
+    <dimen name="catalog_tittle_label_text">16sp</dimen>
     <dimen name="product_detail_height">360dp</dimen>
     <dimen name="Subtitle_size">18sp</dimen>
 </resources>

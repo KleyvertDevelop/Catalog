@@ -37,7 +37,10 @@ public class Results implements Parcelable, Comparable<Results> {
      */
     @Override
     public int compareTo(Results c) {
-        return title.substring(0, 1).compareToIgnoreCase(c.title.substring(0, 1));
+
+        return title.compareTo(c.title);
+
+       // return title.substring(0, 1).compareToIgnoreCase(c.title.substring(0, 1));
     }
 
     @Override

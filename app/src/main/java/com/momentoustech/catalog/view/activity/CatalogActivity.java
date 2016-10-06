@@ -3,6 +3,7 @@ package com.momentoustech.catalog.view.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -35,7 +36,7 @@ public class CatalogActivity extends BaseActivity implements CatalogPresenter.Vi
     CatalogPresenter presenter;
 
     @Bind(R.id.list_products)
-    RecyclerView productList;
+    RecyclerView RecyclerproductList;
 
     private CatalogAdapter adapter;
     private SearchView searchView;
@@ -123,9 +124,9 @@ public class CatalogActivity extends BaseActivity implements CatalogPresenter.Vi
      * Initialize the Recycler view
      */
     private void initializeRecyclerView() {
-        productList.setLayoutManager(new LinearLayoutManager(this));
-        productList.setHasFixedSize(true);
-        productList.setAdapter(adapter);
+        RecyclerproductList.setLayoutManager(new GridLayoutManager(this,2));
+        RecyclerproductList.setHasFixedSize(true);
+        RecyclerproductList.setAdapter(adapter);
     }
 
     /**
@@ -230,7 +231,7 @@ public class CatalogActivity extends BaseActivity implements CatalogPresenter.Vi
     @Override
     public void showLoading() {
         this.showLoading(false);
-        productList.setVisibility(View.GONE);
+        RecyclerproductList.setVisibility(View.GONE);
     }
 
     /**
@@ -239,11 +240,12 @@ public class CatalogActivity extends BaseActivity implements CatalogPresenter.Vi
     @Override
     public void hideLoading() {
         this.stopLoading();
-        productList.setVisibility(View.VISIBLE);
+        RecyclerproductList.setVisibility(View.VISIBLE);
     }
 
     /**
-     * Implementation from eventBus
+     * Implementation from eventBus for receive
+     * the service request
      * @param entity {@link Entity}
      */
     @Subscribe
@@ -273,6 +275,11 @@ public class CatalogActivity extends BaseActivity implements CatalogPresenter.Vi
 
         searchItem = newText;
         presenter.refreshList(_productList,newText);
+
+        // if it's empty start the service again
+        if (newText.isEmpty())
+            presenter.getView().startService();
+
         return false;
     }
 

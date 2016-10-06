@@ -1,9 +1,9 @@
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbarLayout"
@@ -26,15 +26,17 @@
     </android.support.design.widget.AppBarLayout>
 
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:gravity="end">
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
@@ -80,7 +82,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="50"
                             android:text="@string/price_detail"
-                            android:textSize="35sp"
+                            android:textSize="32sp"
                             android:textColor="@android:color/white"
                             android:gravity="center" />
 
@@ -103,7 +105,7 @@
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 card_view:cardCornerRadius="4dp"
                 card_view:cardElevation="8dp"
                 card_view:cardUseCompatPadding="true">
@@ -119,7 +121,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/product_description"
                         android:layout_marginBottom="10dp"
-                        android:textColor="@color/blue_dark"
+                        android:textColor="@color/orange"
                         android:textSize="@dimen/Subtitle_size"/>
 
                     <LinearLayout
@@ -156,9 +158,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center"
-                        android:padding="10dp"
-
-                        >
+                        android:padding="10dp">
 
 
                         <TextView
@@ -189,6 +189,6 @@
             </android.support.v7.widget.CardView>
 
         </LinearLayout>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 
-</android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

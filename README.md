@@ -1,7 +1,6 @@
 # Catalog
 
 
-Aplicación de test para la empresa Momentous Technologies Corp
 
 Puntos o requerimientos:
 
